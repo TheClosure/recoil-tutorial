@@ -1,7 +1,11 @@
 import React from 'react';
 import './Breadcrumbs.style.scss';
+import { useRecoilValue } from 'recoil';
+import { darkModeState } from '../shared/globalState';
 
-const Breadcrumbs = ({ isDarkModeEnabled }) => {
+const Breadcrumbs = () => {
+    const isDarkModeEnabled = useRecoilValue(darkModeState);
+
     return (
         <nav className={ `Breadcrumbs ${ isDarkModeEnabled ? 'Breadcrumbs--dark-mode' : '' }` }>
             <button href="#" className="Breadcrumbs__item">Blog</button>

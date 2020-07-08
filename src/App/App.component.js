@@ -2,20 +2,16 @@ import React, { useState } from 'react';
 import Header from '../Header/Header.component';
 import './App.style.scss';
 import MainContent from '../MainContent/MainContent.component';
+import { useRecoilValue } from 'recoil';
+import { darkModeState } from '../shared/globalState';
 
 const App = () => {
-    const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
-    const toggleDarkMode = () => setIsDarkModeEnabled(!isDarkModeEnabled);
+    const isDarkModeEnabled = useRecoilValue(darkModeState);
 
     return (
         <div className={ `App ${ isDarkModeEnabled ? 'App--dark-mode' : '' }` }>
-            <Header
-                isDarkModeEnabled={ isDarkModeEnabled }
-                toggleDarkMode={ toggleDarkMode }
-            />
-            <MainContent
-                isDarkModeEnabled={ isDarkModeEnabled }
-            />
+            <Header />
+            <MainContent  />
         </div>
     );
 };

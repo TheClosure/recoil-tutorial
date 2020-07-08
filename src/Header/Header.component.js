@@ -1,7 +1,12 @@
 import React from 'react';
 import './Header.style.scss';
+import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
+import { darkModeState, toggleDarkModeState } from '../shared/globalState';
 
-const Header = ({ isDarkModeEnabled, toggleDarkMode }) => {
+const Header = () => {
+    const isDarkModeEnabled = useRecoilValue(darkModeState);
+    const toggleDarkMode = useSetRecoilState(toggleDarkModeState);
+
     return (
         <header className={ `Header ${ isDarkModeEnabled ? 'Header--dark-mode' : '' }` }>
             <div className="Header__content">
