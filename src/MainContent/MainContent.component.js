@@ -3,17 +3,11 @@ import ArticleList from '../ArticleList/ArticleList.component';
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs.component';
 import './MainContent.style.scss';
 
-const MainContent = ({ isDarkModeEnabled, activeLanguage }) => {
+const MainContent = ({ isDarkModeEnabled }) => {
     return (
         <main className="MainContent">
-            <Breadcrumbs
-                isDarkModeEnabled={ isDarkModeEnabled }
-                activeLanguage={ activeLanguage }
-            />
-            <ArticleList
-                isDarkModeEnabled={ isDarkModeEnabled }
-                activeLanguage={ activeLanguage }
-            />
+            <Breadcrumbs isDarkModeEnabled={ isDarkModeEnabled } />
+            <ArticleList isDarkModeEnabled={ isDarkModeEnabled } />
         </main>
     );
 };

@@ -56,6 +56,16 @@ class ArticleService {
             );
         });
     }
+
+    static getById(id) {
+        // Simulate backend call by resolving the Promise after 500ms
+        return new Promise((resolve) => {
+            setTimeout(
+                () => resolve(this.articles.find(article => article.id === id)),
+                500
+            );
+        });
+    }
 }
 
 export default ArticleService;
