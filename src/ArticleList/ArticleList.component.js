@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Article from '../Article/Article.component';
 import './ArticleList.style.scss';
-import ArticleService from '../shared/ArticleService';
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from 'recoil';
-import { articleState, articleQuery, articleByIdQuery } from '../shared/globalState';
+import { useRecoilValueLoadable } from 'recoil';
+import { articleByIdQuery } from '../shared/globalState';
 
 const ArticleList = () => {
-    // const [articles, setArticles] = useRecoilState(articleState);
     const article = useRecoilValueLoadable(articleByIdQuery(3));
 
     const renderArticles = () => {

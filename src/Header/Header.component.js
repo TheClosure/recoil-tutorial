@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.style.scss';
-import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { darkModeState, toggleDarkModeState } from '../shared/globalState';
 
 const Header = () => {
